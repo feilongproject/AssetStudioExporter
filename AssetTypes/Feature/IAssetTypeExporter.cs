@@ -20,7 +20,7 @@ public interface IAssetTypeExporter
 
     void Export(AssetsFileInstance assetsFile, string fileName)
     {
-        using (var fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.Write))
+        using (var fs = new FileStream(fileName, FileMode.Create, FileAccess.Write))
         {
             if (Export(assetsFile, fs))
             {
